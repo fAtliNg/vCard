@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Сборка и выкладка сайта-резюме на https://new.denisenkosergey.ru
+# Сборка и выкладка сайта-резюме на https://denisenkosergey.ru
 # Нужен SSH-доступ по ключу: root@denisenkosergey.ru. На сервере нет rsync — передаём архивом.
 set -euo pipefail
 
@@ -20,4 +20,4 @@ COPYFILE_DISABLE=1 tar --no-xattrs -czf - -C dist . | ssh "$HOST" "
   mv $TARGET.new $TARGET
   rm -rf $TARGET.old
 "
-echo "Готово: https://new.denisenkosergey.ru"
+echo "Готово: https://denisenkosergey.ru"
