@@ -6,6 +6,7 @@ import retrolaunchShot from '../assets/retrolaunch.jpg'
 import profitCaseShot from '../assets/profitcase.jpg'
 import curveballShot from '../assets/curveball.jpg'
 import careerLensShot from '../assets/careerlens.jpg'
+import planPokerShot from '../assets/planpoker.jpg'
 
 export type IconName = 'architecture' | 'rollout' | 'code' | 'lead'
 
@@ -97,6 +98,16 @@ export const resume = {
   ] satisfies Service[],
 
   projects: [
+    {
+      name: 'PlanPoker',
+      url: 'https://planpoker.denisenkosergey.ru/',
+      github: 'https://github.com/fAtliNg/planpoker',
+      summary: 'Покер планирования для команд',
+      description:
+        'Оценка задач командой в реальном времени: комната по ссылке без регистрации, скрытые карты до вскрытия, среднее и разброс оценок, таймер обсуждения и история задач за сессию. Клиент и сервер комнат на WebSocket делят общий протокол на TypeScript; после обрыва связи участник возвращается на своё место.',
+      tags: ['React', 'TypeScript', 'Node.js', 'WebSocket', 'Vite'],
+      preview: planPokerShot,
+    },
     {
       name: 'CareerLens',
       url: 'https://careerlens.denisenkosergey.ru/',
