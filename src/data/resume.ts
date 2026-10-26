@@ -5,6 +5,7 @@ import photo from '../assets/photo.jpg'
 import retrolaunchShot from '../assets/retrolaunch.jpg'
 import profitCaseShot from '../assets/profitcase.jpg'
 import curveballShot from '../assets/curveball.jpg'
+import careerLensShot from '../assets/careerlens.jpg'
 
 export type IconName = 'architecture' | 'rollout' | 'code' | 'lead'
 
@@ -96,6 +97,16 @@ export const resume = {
   ] satisfies Service[],
 
   projects: [
+    {
+      name: 'CareerLens',
+      url: 'https://careerlens.denisenkosergey.ru/',
+      github: 'https://github.com/fAtliNg/careerlens',
+      summary: 'Психологические тесты для карьеры',
+      description:
+        'Бесплатные тесты без регистрации: профориентация по Голланду, подбор IT-профессии, Big Five, DISC, выгорание и синдром самозванца. Результаты с наглядными диаграммами и разбором каждой шкалы; ссылкой на результат можно поделиться. Баллы считаются прямо в браузере, без сервера.',
+      tags: ['React', 'TypeScript', 'Vite', 'SVG-графики', 'Психометрия'],
+      preview: careerLensShot,
+    },
     {
       name: 'Retrolaunch',
       url: 'https://retrolaunch.denisenkosergey.ru/',
