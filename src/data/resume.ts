@@ -7,6 +7,7 @@ import profitCaseShot from '../assets/profitcase.jpg'
 import curveballShot from '../assets/curveball.jpg'
 import careerLensShot from '../assets/careerlens.jpg'
 import planPokerShot from '../assets/planpoker.jpg'
+import neonRushShot from '../assets/neonrush.jpg'
 
 export type IconName = 'architecture' | 'rollout' | 'code' | 'lead'
 
@@ -51,7 +52,7 @@ export const resume = {
   name: 'Денисенко Сергей',
   firstName: 'Сергей',
   lastName: 'Денисенко',
-  roles: ['Lead Frontend', 'Руководитель фронтенд-разработки'],
+  roles: ['Lead Frontend', 'Архитектор AI-решений'],
   photo,
   // Возраст считается от даты рождения, как на старом сайте
   birthDate: new Date(1992, 5, 11),
@@ -137,6 +138,16 @@ export const resume = {
         'Сервис для планирования и проверки инвестиционных стратегий. Калькулятор сложного процента с регулярными пополнениями прогнозирует рост капитала и визуализирует его на графиках. Также доступны кредитный калькулятор и котировки.',
       tags: ['Next.js', 'React', 'MUI', 'Финансы'],
       preview: profitCaseShot,
+    },
+    {
+      name: 'Neon Rush',
+      url: 'https://neonrush.denisenkosergey.ru/',
+      github: 'https://github.com/fAtliNg/neonrush',
+      summary: 'Ночные уличные гонки в браузере',
+      description:
+        'Аркадная гонка в духе Need for Speed против пяти ботов: неоновый город под дождём, мокрый асфальт с отражениями, тоннель и мосты над рекой, сносимые и несносимые столбы. Город, машины и звук генерируются кодом, без загружаемых моделей и аудиофайлов. Рендер на WebGPU с постобработкой: свечение, размытие в движении, сглаживание.',
+      tags: ['three.js', 'WebGPU', 'TypeScript', 'React', 'Web Audio'],
+      preview: neonRushShot,
     },
     {
       name: 'Curveball',
