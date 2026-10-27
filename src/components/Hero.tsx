@@ -34,6 +34,10 @@ export function Hero() {
               <Icon name="mail" size={18} />
               Написать письмо
             </a>
+            <a className="btn btn--ghost" href={resume.resumePdf} target="_blank" rel="noopener">
+              <Icon name="download" size={18} />
+              Резюме в PDF
+            </a>
             <a className="btn btn--ghost" href="#projects">
               Мои проекты
               <Icon name="arrowDown" size={18} />

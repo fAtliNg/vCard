@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<!-- Макет PDF-резюме. Сборка: Chrome --headless=new --no-pdf-header-footer --print-to-pdf=../public/denisenko-sergey-resume.pdf resume.html -->
+<meta charset="utf-8">
+<title>Денисенко Сергей — Lead Frontend</title>
+<style>
+  @font-face { font-family: Geist; font-weight: 100 900; src: url(geist-cyrillic-wght-normal-BEAKL7Jp.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+  @font-face { font-family: Geist; font-weight: 100 900; src: url(geist-latin-wght-normal-BgDaEnEv.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215; }
+  @font-face { font-family: 'Geist Mono'; font-weight: 100 900; src: url(geist-mono-cyrillic-wght-normal-DiZS0aHC.woff2) format('woff2'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+  @font-face { font-family: 'Geist Mono'; font-weight: 100 900; src: url(geist-mono-latin-wght-normal-XN7g48iV.woff2) format('woff2'); unicode-range: U+0000-00FF, U+2000-206F; }
+
+  @page { size: A4; margin: 11mm 14mm 9mm; }
+  :root { --ink: #16181d; --muted: #5d6370; --line: #e3e5ea; --accent: #2f5bea; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Geist, sans-serif; color: var(--ink); font-size: 9pt; line-height: 1.4; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: inherit; text-decoration: none; }
+  .mono { font-family: 'Geist Mono', monospace; }
+
+  header { display: flex; gap: 16pt; align-items: center; padding-bottom: 12pt; border-bottom: 1.5pt solid var(--ink); }
+  header img { width: 66pt; height: 66pt; border-radius: 50%; object-fit: cover; flex: none; }
+  header .who { flex: 1; }
+  h1 { font-size: 22pt; font-weight: 650; letter-spacing: -0.02em; line-height: 1.1; }
+  .title { font-size: 11pt; font-weight: 500; color: var(--accent); margin-top: 3pt; }
+  .contacts { display: grid; grid-template-columns: auto; gap: 1.5pt; font-size: 8.6pt; color: var(--muted); text-align: right; }
+  .contacts b { color: var(--ink); font-weight: 500; }
+  .contacts .site { justify-self: end; margin-top: 4pt; padding: 2.5pt 8pt; border: 1pt solid var(--accent); border-radius: 20pt; color: var(--accent); font-weight: 600; font-size: 9pt; }
+
+  section { margin-top: 10pt; }
+  h2 { font-family: 'Geist Mono', monospace; font-size: 8pt; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 6pt; display: flex; align-items: center; gap: 8pt; }
+  h2::after { content: ''; flex: 1; height: 0.75pt; background: var(--line); }
+
+  .summary p + p { margin-top: 4pt; }
+
+  .comp { display: grid; grid-template-columns: 1fr 1fr; gap: 6pt 18pt; }
+  .comp div b { display: block; font-weight: 600; }
+  .comp div span { color: var(--muted); }
+
+  .job { break-inside: avoid; }
+  .job + .job { margin-top: 8pt; }
+  .job-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+  .job-head h3 { font-size: 10.6pt; font-weight: 600; }
+  .job-head h3 span { font-weight: 400; color: var(--muted); }
+  .period { font-family: 'Geist Mono', monospace; font-size: 8.4pt; color: var(--muted); white-space: nowrap; }
+  ul { margin-top: 3pt; padding-left: 12pt; }
+  li { margin-top: 1.5pt; }
+  li::marker { color: var(--accent); }
+  .projects-line { margin-top: 4pt; color: var(--muted); }
+  .projects-line b { color: var(--ink); font-weight: 500; }
+
+  .pet-intro { color: var(--muted); margin-bottom: 6pt; }
+  .pet { display: grid; grid-template-columns: 1fr 1fr; gap: 5pt 18pt; }
+  .pet div { break-inside: avoid; }
+  .pet-head { display: flex; justify-content: space-between; align-items: baseline; gap: 6pt; }
+  .pet-head b { font-weight: 600; }
+  .pet-head a { font-family: 'Geist Mono', monospace; font-size: 7.8pt; color: var(--accent); }
+  .pet p { color: var(--muted); }
+  .pet .stack { font-family: 'Geist Mono', monospace; font-size: 7.6pt; color: var(--ink); margin-top: 1.5pt; }
+
+  .skills { display: grid; grid-template-columns: 112pt 1fr; gap: 3pt 12pt; }
+  .skills dt { font-weight: 600; }
+  .skills dd { color: var(--muted); }
+
+  .edu { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+  .edu b { font-weight: 600; }
+  .edu span { color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="../src/assets/photo.jpg" alt="">
+  <div class="who">
+    <h1>Денисенко Сергей</h1>
+    <div class="title">Lead Frontend · Архитектор AI-решений</div>
+  </div>
+  <div class="contacts">
+    <a href="tel:+79185036550"><b>+7 (918) 503-65-50</b></a>
+    <a href="mailto:denisenkosfedu@gmail.com"><b>denisenkosfedu@gmail.com</b></a>
+    <a class="site" href="https://denisenkosergey.ru">denisenkosergey.ru ↗</a>
+  </div>
+</header>
+
+<section class="summary">
+  <h2>О себе</h2>
+  <p>Более 11 лет в индустрии, с 2021 года — Lead Frontend в Сбере. Отвечаю за архитектуру фронтенда, команду и путь продукта до промышленной эксплуатации: от согласования задач с заказчиком до внедрения по стандартам банка и нормам информационной безопасности.</p>
+  <p>Использую <span style="white-space:nowrap">AI-агентов</span> на всех этапах работы — от проектирования решений до выпуска в продакшен.</p>
+</section>
+
+<section>
+  <h2>Опыт работы</h2>
+
+  <div class="job">
+    <div class="job-head"><h3>Lead Frontend <span>· ПАО Сбер</span></h3><span class="period">2021 — н. в.</span></div>
+    <ul>
+      <li>Руковожу командой фронтенд-разработки и отвечаю за её техническое направление: архитектуру фронтенд-части, качество кода, планирование, найм и развитие сотрудников.</li>
+      <li>Запускаю MVP для проверки гипотез, вывожу продукты в промышленную эксплуатацию и развиваю их вместе с бизнесом.</li>
+      <li>Провожу продукты через приёмо-сдаточные испытания и требования кибербезопасности банка, разбираю инциденты на промышленных стендах.</li>
+    </ul>
+    <p class="projects-line"><b>Продукты:</b> PWA личного кабинета СберМобайл · SberUnity · InTra · Портал ДЗО · навыки Салюта для ЕАптеки и СберЛогистики</p>
+  </div>
+
+  <div class="job">
+    <div class="job-head"><h3>Senior Frontend Developer <span>· ПАО Сбер</span></h3><span class="period">2018 — 2021</span></div>
+    <ul>
+      <li>Разрабатывал фронтенд-микросервисы АС ЦАРС и бизнес-функциональность системы.</li>
+      <li>Настроил сборку, версионирование пакетов и публикацию в Nexus, участвовал в DevOps-процессах.</li>
+      <li>Развивал библиотеку компонентов, интегрировал систему с ОАД и SbolPRO.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head"><h3>Fullstack Developer <span>· НИИ «Спецвузавтоматика»</span></h3><span class="period">2015 — 2018</span></div>
+    <ul>
+      <li>Участвовал в проектах по государственному заказу на React, Redux, Python, C++ и Qt.</li>
+      <li>Занимался вопросами информационной безопасности ПО.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Личные проекты</h2>
+  <div class="pet">
+    <div>
+      <div class="pet-head"><b>Neon Rush</b><a href="https://neonrush.denisenkosergey.ru">neonrush.denisenkosergey.ru</a></div>
+      <p>Браузерная 3D-гонка с ботами: процедурный неоновый город, отражения на мокром асфальте, постобработка.</p>
+    </div>
+    <div>
+      <div class="pet-head"><b>PlanPoker</b><a href="https://planpoker.denisenkosergey.ru">planpoker.denisenkosergey.ru</a></div>
+      <p>Покер планирования в реальном времени: комнаты по ссылке, общий протокол клиента и сервера, восстановление после обрыва связи.</p>
+    </div>
+    <div>
+      <div class="pet-head"><b>CareerLens</b><a href="https://careerlens.denisenkosergey.ru">careerlens.denisenkosergey.ru</a></div>
+      <p>Психологические тесты для карьеры с диаграммами результатов; расчёт целиком в браузере.</p>
+    </div>
+    <div>
+      <div class="pet-head"><b>Retrolaunch</b><a href="https://retrolaunch.denisenkosergey.ru">retrolaunch.denisenkosergey.ru</a></div>
+      <p>Каталог классических ПК-игр, которые запускаются в браузере через эмулятор и WebAssembly-порты.</p>
+    </div>
+    <div>
+      <div class="pet-head"><b>Profit Case</b><a href="https://profit-case.ru">profit-case.ru</a></div>
+      <p>Инструменты частного инвестора: калькулятор сложного процента с графиком роста капитала, кредитный калькулятор.</p>
+    </div>
+    <div>
+      <div class="pet-head"><b>Curveball</b><a href="https://denisenkosergey.ru/curveball/">denisenkosergey.ru/curveball</a></div>
+      <p>Ремейк классической Flash-игры: 3D-пинг-понг против компьютера с физикой подкрученного мяча.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Навыки</h2>
+  <dl class="skills">
+    <dt>Управление командой</dt><dd>Руководство фронтенд-командой с 2021 года: планирование, найм, код-ревью, развитие и мотивация разработчиков</dd>
+    <dt>Frontend</dt><dd>React, Redux (Toolkit, RTK Query, Saga), TypeScript, Next.js, Vite, PWA</dd>
+    <dt>AI</dt><dd>Claude Code, GigaCode и другие AI-ассистенты; разработка с AI-агентами, LLM в инженерных процессах</dd>
+    <dt>Инфраструктура</dt><dd>Linux, Nginx, Docker, OpenShift, Jenkins, Nexus</dd>
+    <dt>Процессы</dt><dd>Agile, Scrum, Jira</dd>
+  </dl>
+</section>
+
+<section>
+  <h2>Образование</h2>
+  <div class="edu">
+    <div><b>Южный федеральный университет</b> <span>· факультет математики, механики и компьютерных наук</span></div>
+    <span class="period">2009 — 2015</span>
+  </div>
+</section>
+
+</body>
+</html>

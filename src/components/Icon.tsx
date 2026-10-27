@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import type { IconName } from '../data/resume'
 
-type Name = IconName | 'sun' | 'moon' | 'arrow' | 'arrowDown' | 'mail' | 'phone' | 'pin' | 'menu' | 'close' | 'github'
+type Name = IconName | 'sun' | 'moon' | 'arrow' | 'arrowDown' | 'mail' | 'phone' | 'pin' | 'menu' | 'close' | 'github' | 'download'
 
 const paths: Record<Name, ReactNode> = {
   architecture: (
@@ -69,6 +69,13 @@ const paths: Record<Name, ReactNode> = {
   ),
   menu: <path d="M4 8h16M4 16h16" />,
   close: <path d="M6 6l12 12M18 6 6 18" />,
+  download: (
+    <>
+      <path d="M12 4v11" />
+      <path d="m7 10 5 5 5-5" />
+      <path d="M5 20h14" />
+    </>
+  ),
   github: (
     <>
       <path d="M9 19c-4.3 1.4-4.3-2.5-6-3" />
